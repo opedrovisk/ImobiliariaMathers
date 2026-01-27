@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária Viviane de Souza</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="styles/estilo.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <header id="header"></header>
+
+        <div id="banner">
+            <img src="assets/mao.jpg" alt="Banner Imobiliária" class="img-fluid">
+
+            <div class="overlay-content">
+                <div class="search-form-container">
+
+                    <h1 class="form-title">O seu imóvel dos sonhos está a <br> apenas alguns cliques de você! </br></h1>
+
+                    <form class="search-form">
+                        <div class="form-group">
+                            <i class="bi bi-house-door"></i>
+                            <div class="form-input-wrapper">
+                                <label>Tipo</label>
+                                <select id="input-tipo">
+                                    <option value="">Selecionar Tipo</option>
+                                    <option value="casa">Casa</option>
+                                    <option value="apartamento">Apartamento</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-car-front"></i>
+                            <div class="form-input-wrapper">
+                                <label>Garagem</label>
+                                <select id="input-garagem">
+                                    <option value="">Selecionar Garagem</option>
+                                    <option value="true">Com Garagem</option>
+                                    <option value="false">Sem Garagem</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-door-closed"></i>
+                            <div class="form-input-wrapper">
+                                <label>Dormitórios</label>
+                                <select id="input-dormitorios">
+                                    <option value="">Selecionar Dormitórios</option>
+                                    <option value="1">1 dormitório</option>
+                                    <option value="2">2 dormitórios</option>
+                                    <option value="3">3 dormitórios</option>
+                                    <option value="4">4 dormitórios</option>
+                                    <option value="5">5 ou mais dormitórios</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-rulers"></i>
+                            <div class="form-input-wrapper">
+                                <label>Espaço</label>
+                                <select id="input-espaco">
+                                    <option value="">Selecionar Espaço</option>
+                                    <option value="0-50">0 - 50 m²</option>
+                                    <option value="51-100">51 - 100 m²</option>
+                                    <option value="101-150">101 - 150 m²</option>
+                                    <option value="150+">Mais de 150 m²</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-buscar">Buscar imóveis</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/componentes/cabecalho.js"></script>
+    <script src="js/componentes/inserirFiltros.js"></script>
+    <script src="js/componentes/filtros.js"></script>
+    <script src="js/componentes/cards.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
