@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Imóvel - Imobiliária Viviane de Souza</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="styles/estilo.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <header id="header"></header>
+
+        <div id="cadastro-banner">
+            <img src="assets/fotofamilia.jpg" alt="Banner Cadastro" class="img-fluid blur-background">
+
+            <div class="overlay-content">
+                <div class="cadastro-form-container">
+                    <h1 class="form-title">Cadastrar Novo Imóvel</h1>
+
+                    <form class="cadastro-form" id="form-cadastro">
+                        <div class="form-group">
+                            <i class="bi bi-house-door"></i>
+                            <div class="form-input-wrapper">
+                                <label>Tipo *</label>
+                                <select id="cadastro-tipo" required>
+                                    <option value="">Selecionar Tipo</option>
+                                    <option value="casa">Casa</option>
+                                    <option value="apartamento">Apartamento</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-tag"></i>
+                            <div class="form-input-wrapper">
+                                <label>Tipo de Negócio *</label>
+                                <select id="cadastro-negocio" required>
+                                    <option value="">Selecionar</option>
+                                    <option value="compra">Compra</option>
+                                    <option value="aluguel">Aluguel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-geo-alt"></i>
+                            <div class="form-input-wrapper">
+                                <label>Endereço *</label>
+                                <input type="text" id="cadastro-endereco" placeholder="Digite o endereço completo"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-door-closed"></i>
+                            <div class="form-input-wrapper">
+                                <label>Dormitórios *</label>
+                                <select id="cadastro-dormitorios" required>
+                                    <option value="">Selecionar Dormitórios</option>
+                                    <option value="1">1 dormitório</option>
+                                    <option value="2">2 dormitórios</option>
+                                    <option value="3">3 dormitórios</option>
+                                    <option value="4">4 dormitórios</option>
+                                    <option value="5">5 ou mais dormitórios</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-car-front"></i>
+                            <div class="form-input-wrapper">
+                                <label>Garagem *</label>
+                                <select id="cadastro-garagem" required>
+                                    <option value="">Selecionar Garagem</option>
+                                    <option value="true">Com Garagem</option>
+                                    <option value="false">Sem Garagem</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-rulers"></i>
+                            <div class="form-input-wrapper">
+                                <label>Espaço (m²) *</label>
+                                <input type="number" id="cadastro-espaco" placeholder="Ex: 75" min="1" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-currency-dollar"></i>
+                            <div class="form-input-wrapper">
+                                <label>Valor (R$) *</label>
+                                <input type="number" id="cadastro-valor" placeholder="Ex: 250000" min="0" step="1000"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="bi bi-card-text"></i>
+                            <div class="form-input-wrapper">
+                                <label>Descrição</label>
+                                <textarea id="cadastro-descricao" placeholder="Descreva o imóvel..."
+                                    rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group upload-group">
+                            <i class="bi bi-image"></i>
+                            <div class="form-input-wrapper">
+                                <label>Imagens do Imóvel</label>
+                                <input type="file" id="cadastro-imagens" accept="image/*" multiple class="file-input">
+                                <div class="file-info">Selecione uma ou mais imagens</div>
+                            </div>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" class="btn-cancelar" onclick="window.location.href='index.html'">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn-cadastrar">
+                                Cadastrar Imóvel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/componentes/cabecalho.js"></script>
+    <script>
+        // Auto-expandir textarea de descrição
+        const textarea = document.getElementById('cadastro-descricao');
+        textarea.addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        // Preview de imagens
+        document.getElementById('cadastro-imagens').addEventListener('change', function (e) {
+            const fileInfo = this.parentElement.querySelector('.file-info');
+            const files = e.target.files;
+
+            if (files.length > 0) {
+                fileInfo.textContent = `${files.length} imagem(ns) selecionada(s)`;
+            } else {
+                fileInfo.textContent = 'Selecione uma ou mais imagens';
+            }
+        });
+
+        // Submit do formulário
+        document.getElementById('form-cadastro').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = {
+                tipo: document.getElementById('cadastro-tipo').value,
+                negocio: document.getElementById('cadastro-negocio').value,
+                endereco: document.getElementById('cadastro-endereco').value,
+                dormitorios: document.getElementById('cadastro-dormitorios').value,
+                garagem: document.getElementById('cadastro-garagem').value === 'true',
+                espaco: document.getElementById('cadastro-espaco').value,
+                valor: document.getElementById('cadastro-valor').value,
+                descricao: document.getElementById('cadastro-descricao').value,
+                imagens: document.getElementById('cadastro-imagens').files
+            };
+
+            console.log('Dados do imóvel:', formData);
+            alert('Imóvel cadastrado com sucesso! (Funcionalidade em desenvolvimento)');
+
+            // Limpar formulário
+            this.reset();
+            document.querySelector('.file-info').textContent = 'Selecione uma ou mais imagens';
+        });
+    </script>
+</body>
+
+</html>

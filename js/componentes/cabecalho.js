@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const header = `
         <nav class="navbar navbar-expand-lg bg-body-tertiary px-3 px-md-4 px-lg-5">
-            <div class="container-fluid justify-content-between">
-                <div style="width: 70px;"></div>
+            <div class="container-fluid justify-content-between align-items-center">
+                <div class="nav-links d-flex gap-3">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="cadastro.html" class="nav-link">Cadastrar</a>
+                </div>
                 
-                <a class="navbar-brand mx-auto" href="#">
+                <a class="navbar-brand mx-auto" href="index.html">
                     <img src="assets/Logo.png" alt="Viviane Imobiliária" class="logo-img">
                 </a>
                 
