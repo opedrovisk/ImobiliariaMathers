@@ -8,7 +8,8 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="styles/estilo.css" rel="stylesheet">
+    <link href="styles/global.css" rel="stylesheet">
+    <link href="styles/cadastro.css" rel="stylesheet">
 </head>
 
 <body>
@@ -135,14 +136,12 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/componentes/cabecalho.js"></script>
     <script>
-        // Auto-expandir textarea de descrição
         const textarea = document.getElementById('cadastro-descricao');
         textarea.addEventListener('input', function () {
             this.style.height = 'auto';
             this.style.height = (this.scrollHeight) + 'px';
         });
 
-        // Preview de imagens
         document.getElementById('cadastro-imagens').addEventListener('change', function (e) {
             const fileInfo = this.parentElement.querySelector('.file-info');
             const files = e.target.files;
@@ -154,7 +153,6 @@
             }
         });
 
-        // Submit do formulário
         document.getElementById('form-cadastro').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -173,7 +171,6 @@
             console.log('Dados do imóvel:', formData);
             alert('Imóvel cadastrado com sucesso! (Funcionalidade em desenvolvimento)');
 
-            // Limpar formulário
             this.reset();
             document.querySelector('.file-info').textContent = 'Selecione uma ou mais imagens';
         });
