@@ -1,0 +1,519 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        .toast-container-custom {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toast-custom {
+            width: fit-content;
+            min-width: unset;
+            max-width: min(92vw, 360px);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.92rem;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .toast-custom.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast-custom.success {
+            background: #198754;
+        }
+
+        .toast-custom.error {
+            background: #dc3545;
+        }
+
+        .password-input-wrapper {
+            position: relative;
+        }
+        
+        .password-input-wrapper input {
+            padding-right: 2.8rem;
+        }
+        
+        .password-visibility-btn {
+            position: absolute;
+            top: 50%;
+            right: 0.55rem;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            color: #58738e;
+            padding: 0.2rem;
+            line-height: 1;
+            cursor: pointer;
+            width: 1.8rem;
+            height: 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .password-visibility-btn:hover {
+            color: #1b4f80;
+        }
+
+        .password-visibility-btn i {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .password-visibility-btn.animating i {
+            transform: scale(0.78);
+            opacity: 0.55;
+        }
+
+        .recovery-codes-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            background: rgba(5, 18, 34, 0.62);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .recovery-codes-modal.show {
+            display: flex;
+        }
+
+        .recovery-codes-content {
+            width: min(560px, 100%);
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.25rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .recovery-codes-content h3 {
+            margin: 0 0 0.45rem;
+            color: #0f2c48;
+        }
+
+        .recovery-codes-content p {
+            margin: 0 0 0.8rem;
+            color: #52687f;
+            font-size: 0.92rem;
+        }
+
+        .recovery-codes-list {
+            margin: 0;
+            padding: 0.75rem;
+            border: 1px solid #d8e2ee;
+            border-radius: 10px;
+            background: #f7fbff;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.45rem;
+            list-style: none;
+            font-family: Consolas, monospace;
+            color: #173958;
+            font-weight: 700;
+        }
+
+        .recovery-codes-actions {
+            margin-top: 0.9rem;
+            display: flex;
+            gap: 0.55rem;
+            justify-content: flex-end;
+        }
+
+        .recovery-codes-btn {
+            border: 1px solid rgba(18, 71, 118, 0.32);
+            border-radius: 10px;
+            background: #fff;
+            color: #11406c;
+            padding: 0.52rem 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+}
+
+<main class="login-page">
+    <section class="login-showcase" aria-hidden="true">
+        <div class="showcase-badge">
+            <img src="~/assets/Logo.png" alt="Logo Imobiliária Viviane" class="showcase-logo" />
+        </div>
+        <h1>Seu próximo imóvel começa aqui</h1>
+        <p>Entre para acessar imóveis de alta qualidade.</p>
+        <img src="~/assets/loginpic.svg" alt="Ilustração de login" class="showcase-image" />
+    </section>
+
+    <section class="login-panel">
+        <form class="login-form" id="login-access" asp-controller="Home" asp-action="Index">
+            <div class="login-form-header">
+                <p class="eyebrow">Bem-vindo de volta</p>
+                <h2>Entrar</h2>
+                <p class="subtitle">Use seu e-mail e senha para continuar.</p>
+            </div>
+
+            <div class="login-input-group">
+                <div class="login-input-box">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required />
+                </div>
+
+                <div class="login-input-box">
+                    <label for="password">Senha</label>
+                    <div class="password-input-wrapper">
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required />
+                        <button type="button" class="password-visibility-btn" data-target="password"
+                                aria-label="Mostrar senha" title="Mostrar senha">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-row">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember" />
+                    Lembrar de mim
+                </label>
+                <a href="#reset-by-code" class="forgot-link">Esqueci minha senha</a>
+            </div>
+
+            <div class="auth-switch-buttons" aria-label="Ações secundárias de autenticação">
+                <a href="#quick-register" class="switch-btn">Cadastro</a>
+            </div>
+
+            <button class="login-submit" type="submit">Entrar na plataforma</button>
+        </form>
+
+        <div class="auth-extras" aria-label="Opções de cadastro e recuperação">
+            <section class="extra-card" id="quick-register">
+                <div class="extra-card-header">
+                    <p class="eyebrow">Cadastro</p>
+                    <h3>Criar conta rapidamente</h3>
+                    <p class="extra-subtitle">Crie sua conta e entre com seu e-mail e senha.</p>
+                </div>
+
+                <form class="extra-form" id="register-form">
+                    <div class="login-input-box">
+                        <label for="register-name">Nome completo</label>
+                        <input id="register-name" type="text" name="register-name"
+                               placeholder="Digite seu nome completo" required />
+                    </div>
+
+                    <div class="login-input-box">
+                        <label for="register-email">E-mail</label>
+                        <input id="register-email" type="email" name="register-email" placeholder="Digite seu e-mail"
+                               required />
+                    </div>
+
+                    <div class="login-input-box">
+                        <label for="register-password">Senha</label>
+                        <div class="password-input-wrapper">
+                            <input id="register-password" type="password" name="register-password"
+                                   placeholder="Crie uma senha" minlength="6" required />
+                            <button type="button" class="password-visibility-btn" data-target="register-password"
+                                    aria-label="Mostrar senha" title="Mostrar senha">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="secondary-submit">Cadastrar</button>
+                    <a href="#login-access" class="back-login-link">Voltar ao login</a>
+                </form>
+            </section>
+
+            <section class="extra-card" id="reset-by-code">
+                <div class="extra-card-header">
+                    <p class="eyebrow">Recuperação</p>
+                    <h3>Redefinir com código</h3>
+                    <p class="extra-subtitle">Use um dos seus códigos de recuperação para criar nova senha.</p>
+                </div>
+
+                <form class="extra-form" id="reset-by-code-form">
+                    <div class="login-input-box">
+                        <label for="reset-code-email">E-mail cadastrado</label>
+                        <input id="reset-code-email" type="email" placeholder="Digite seu e-mail" required />
+                    </div>
+
+                    <div class="login-input-box">
+                        <label for="reset-recovery-code">Código de recuperação</label>
+                        <input id="reset-recovery-code" type="text" placeholder="Ex: A1B2-C3D4" maxlength="16"
+                               required />
+                    </div>
+
+                    <div class="login-input-box">
+                        <label for="reset-new-password">Nova senha</label>
+                        <div class="password-input-wrapper">
+                            <input id="reset-new-password" type="password" minlength="6"
+                                   placeholder="Digite sua nova senha" required />
+                            <button type="button" class="password-visibility-btn" data-target="reset-new-password"
+                                    aria-label="Mostrar senha" title="Mostrar senha">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="login-input-box">
+                        <label for="reset-confirm-password">Confirmar nova senha</label>
+                        <div class="password-input-wrapper">
+                            <input id="reset-confirm-password" type="password" minlength="6"
+                                   placeholder="Confirme a nova senha" required />
+                            <button type="button" class="password-visibility-btn" data-target="reset-confirm-password"
+                                    aria-label="Mostrar senha" title="Mostrar senha">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="secondary-submit">Redefinir senha</button>
+                    <a href="#login-access" class="back-login-link">Voltar ao login</a>
+                </form>
+            </section>
+
+        </div>
+    </section>
+</main>
+
+<form id="csrf-form" method="post" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
+<div id="toast-container" class="toast-container-custom" aria-live="polite" aria-atomic="true"></div>
+<div id="recovery-codes-modal" class="recovery-codes-modal" aria-hidden="true">
+    <div class="recovery-codes-content" role="dialog" aria-modal="true" aria-labelledby="recovery-codes-title">
+        <h3 id="recovery-codes-title">Guarde seus códigos de recuperação</h3>
+        <p>Esses códigos serão exibidos apenas agora. Salve em local seguro.</p>
+        <ul id="recovery-codes-list" class="recovery-codes-list"></ul>
+        <div class="recovery-codes-actions">
+            <button type="button" id="copy-recovery-codes" class="recovery-codes-btn">Copiar códigos</button>
+            <button type="button" id="close-recovery-codes" class="recovery-codes-btn">Fechar</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const toastContainer = document.getElementById('toast-container');
+        const loginForm = document.getElementById('login-access');
+        const registerForm = document.getElementById('register-form');
+        const resetByCodeForm = document.getElementById('reset-by-code-form');
+        const recoveryCodesModal = document.getElementById('recovery-codes-modal');
+        const recoveryCodesList = document.getElementById('recovery-codes-list');
+        const closeRecoveryCodesButton = document.getElementById('close-recovery-codes');
+        const copyRecoveryCodesButton = document.getElementById('copy-recovery-codes');
+        const csrfToken = document.querySelector('#csrf-form input[name="__RequestVerificationToken"]')?.value || '';
+
+        let lastRecoveryCodes = [];
+
+        function showToast(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `toast-custom ${type}`;
+            toast.textContent = message;
+
+            toastContainer.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.add('show');
+            });
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 250);
+            }, 2600);
+        }
+        
+        function initializePasswordToggles() {
+            const toggleButtons = document.querySelectorAll('.password-visibility-btn');
+        
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const input = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+        
+                    if (!input || !icon) {
+                        return;
+                    }
+        
+                    const isPassword = input.type === 'password';
+                    this.classList.add('animating');
+
+                    input.type = isPassword ? 'text' : 'password';
+                    icon.className = isPassword ? 'fa-solid fa-eye' : 'fa-regular fa-eye';
+                    this.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+                    this.setAttribute('title', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+
+                    setTimeout(() => {
+                        this.classList.remove('animating');
+                    }, 180);
+                });
+            });
+        }
+        
+        initializePasswordToggles();
+
+        function showRecoveryCodes(codes) {
+            lastRecoveryCodes = Array.isArray(codes) ? codes : [];
+            recoveryCodesList.innerHTML = '';
+
+            lastRecoveryCodes.forEach(code => {
+                const item = document.createElement('li');
+                item.textContent = code;
+                recoveryCodesList.appendChild(item);
+            });
+
+            recoveryCodesModal.classList.add('show');
+            recoveryCodesModal.setAttribute('aria-hidden', 'false');
+        }
+
+        function hideRecoveryCodes() {
+            recoveryCodesModal.classList.remove('show');
+            recoveryCodesModal.setAttribute('aria-hidden', 'true');
+        }
+
+        loginForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const payload = {
+                email: document.getElementById('email').value,
+                senha: document.getElementById('password').value,
+                rememberMe: document.querySelector('input[name="remember"]').checked
+            };
+
+            try {
+                const response = await fetch('/Home/ValidarLogin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.mensagem || 'Não foi possível entrar.');
+                }
+
+                showToast(data.mensagem || 'Login realizado com sucesso.', 'success');
+                setTimeout(() => {
+                    window.location.href = '/Home/Index';
+                }, 700);
+            } catch (error) {
+                showToast(error.message || 'Erro ao validar login.', 'error');
+            }
+        });
+
+        registerForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const payload = {
+                name: document.getElementById('register-name').value,
+                email: document.getElementById('register-email').value,
+                senha: document.getElementById('register-password').value
+            };
+
+            try {
+                const response = await fetch('/Home/CadastrarUsuario', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.mensagem || 'Não foi possível cadastrar.');
+                }
+
+                showToast('Cadastro realizado com sucesso!', 'success');
+
+                if (Array.isArray(data.codigosRecuperacao) && data.codigosRecuperacao.length > 0) {
+                    showRecoveryCodes(data.codigosRecuperacao);
+                }
+
+                registerForm.reset();
+                window.location.hash = '#login-access';
+            } catch (error) {
+                showToast(error.message || 'Erro ao cadastrar usuário.', 'error');
+            }
+        });
+
+        resetByCodeForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const payload = {
+                email: document.getElementById('reset-code-email').value,
+                codigoRecuperacao: document.getElementById('reset-recovery-code').value,
+                novaSenha: document.getElementById('reset-new-password').value,
+                confirmarSenha: document.getElementById('reset-confirm-password').value
+            };
+
+            try {
+                const response = await fetch('/Home/RedefinirSenhaComCodigo', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.mensagem || 'Não foi possível redefinir a senha.');
+                }
+
+                showToast(data.mensagem || 'Senha redefinida com sucesso.', 'success');
+                resetByCodeForm.reset();
+                window.location.hash = '#login-access';
+            } catch (error) {
+                showToast(error.message || 'Erro ao redefinir senha.', 'error');
+            }
+        });
+
+        closeRecoveryCodesButton.addEventListener('click', hideRecoveryCodes);
+
+        copyRecoveryCodesButton.addEventListener('click', async function () {
+            if (lastRecoveryCodes.length === 0) {
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(lastRecoveryCodes.join('\n'));
+                showToast('Códigos copiados para a área de transferência.', 'success');
+            } catch {
+                showToast('Não foi possível copiar automaticamente. Salve manualmente.', 'error');
+            }
+        });
+
+        recoveryCodesModal.addEventListener('click', function (event) {
+            if (event.target === recoveryCodesModal) {
+                hideRecoveryCodes();
+            }
+        });
+    </script>
+}

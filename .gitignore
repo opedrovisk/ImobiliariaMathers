@@ -1,1 +1,8 @@
 node_modules
+
+# .NET build outputs
+**/bin/
+**/obj/
+
+# Local sensitive overrides (do not commit)
+ImobiliariaViviane/ImobiliariaViviane/appsettings.Local.json

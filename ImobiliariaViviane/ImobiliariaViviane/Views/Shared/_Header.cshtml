@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-3 px-md-4 px-lg-5">
+    <div class="container-fluid justify-content-between align-items-center">
+        <div class="nav-links d-flex gap-3">
+            <a asp-controller="Home" asp-action="Index" class="nav-link">Início</a>
+            @if (User.IsInRole("ADMINISTRATOR"))
+            {
+                <a asp-controller="Home" asp-action="CadastroImoveis" class="nav-link">Cadastrar imóveis</a>
+                <a asp-controller="Home" asp-action="AlterarImoveis" class="nav-link">Alterar imóveis</a>
+            }
+        </div>
+
+        <a class="navbar-brand mx-auto" asp-controller="Home" asp-action="Index">
+            <img src="~/assets/Logo.png" alt="Viviane Imobiliária" class="logo-img" />
+        </a>
+
+        <div class="d-flex align-items-center gap-2" id="auth-actions">
+            <button class="btn btn-outline-light sobre-btn" data-bs-toggle="modal" data-bs-target="#sobreModal">
+                Sobre
+            </button>
+
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <button id="logout-btn" type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                        data-bs-target="#logoutConfirmModal">
+                    Sair
+                </button>
+            }
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="sobreModal" tabindex="-1" aria-labelledby="sobreModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sobreModalLabel">Sobre Nós</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Atuamos com corretoria de imóveis para compra, venda e locação, conectando clientes às melhores
+                    oportunidades de acordo com cada perfil.</p>
+
+                    <p>Nosso atendimento é consultivo e acompanha todas as etapas da negociação, desde a busca do imóvel
+                        ideal até a formalização com transparência e segurança.</p>
+
+                        <p>Trabalhamos para tornar sua experiência imobiliária mais simples, ágil e confiável, com foco em
+                            relacionamento e resultados.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <div class="modal fade" id="logoutConfirmModal" tabindex="-1" aria-labelledby="logoutConfirmModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="logoutConfirmModalLabel">Confirmar saída</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Deseja realmente sair da sua conta agora?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <form asp-controller="Home" asp-action="Logout" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-danger">Sair</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }

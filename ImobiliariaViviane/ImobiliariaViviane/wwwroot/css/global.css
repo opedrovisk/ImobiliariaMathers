@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #0d1b2a !important;
+}
+
+.nav-links {
+    min-width: 180px;
+}
+
+.nav-links .nav-link {
+    color: #fff !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links .nav-link:hover {
+    color: #adb5bd !important;
+}
+
+.navbar .nav-link {
+    color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+    color: #adb5bd !important;
+}
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sobre-btn {
+    color: #fff !important;
+    border-color: #fff !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    transition: all 0.3s;
+}
+
+.sobre-btn:hover {
+    background-color: #fff !important;
+    color: #0d1b2a !important;
+    border-color: #fff !important;
+}
+
+.logo-img {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+#logoutConfirmModal .modal-dialog {
+    max-width: 500px;
+}
+
+#logoutConfirmModal .modal-content {
+    border-radius: 6px;
+    border: 1px solid #d9dee8;
+}
+
+#logoutConfirmModal .modal-header {
+    position: relative;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+}
+
+#logoutConfirmModal .modal-title {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+}
+
+#logoutConfirmModal .modal-header .btn-close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    margin: 0;
+}
+
+#logoutConfirmModal .modal-body {
+    text-align: center;
+    padding: 1.25rem;
+}
+
+#logoutConfirmModal .modal-footer {
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+}
+
+#logoutConfirmModal .modal-footer .btn {
+    min-width: 92px;
+    border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+    .logo-img {
+        height: 30px;
+    }
+}
