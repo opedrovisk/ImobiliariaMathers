@@ -30,21 +30,11 @@ namespace ImobiliariaViviane.Controllers
 
         public IActionResult Index()
         {
-            if (User.Identity?.IsAuthenticated != true)
-            {
-                return RedirectToAction(nameof(Login));
-            }
-
             return View();
         }
 
         public IActionResult Imoveis()
         {
-            if (User.Identity?.IsAuthenticated != true)
-            {
-                return RedirectToAction(nameof(Login));
-            }
-
             return View();
         }
 
@@ -294,7 +284,7 @@ namespace ImobiliariaViviane.Controllers
             return Ok(new { mensagem = "Imóvel excluído com sucesso." });
         }
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> BuscarImoveis(
             [FromQuery] string? tipo,
@@ -369,6 +359,9 @@ namespace ImobiliariaViviane.Controllers
                 i.garagem,
                 i.area,
                 i.preco,
+                bairro = i.bairro,
+                cidade = i.cidade,
+                estado = i.estado,
                 endereco = string.Join(" - ", new[] { i.bairro, $"{i.cidade}/{i.estado}" }.Where(v => !string.IsNullOrWhiteSpace(v))),
                 descricao = string.IsNullOrWhiteSpace(i.descricao) ? "Sem descrição disponível." : i.descricao,
                 imagens = i.imagens,
@@ -533,7 +526,7 @@ namespace ImobiliariaViviane.Controllers
         public IActionResult Logout()
         {
             Response.Cookies.Delete("auth_token");
-            return RedirectToAction(nameof(Login));
+            return RedirectToAction(nameof(Index));
         }
 
         [AllowAnonymous]

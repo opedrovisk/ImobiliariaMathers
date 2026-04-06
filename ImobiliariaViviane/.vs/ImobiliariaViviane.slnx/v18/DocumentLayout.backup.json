@@ -3,8 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\views\\home\\cadastroimoveis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\views\\home\\cadastroimoveis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\views\\home\\alterarimoveis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\views\\home\\alterarimoveis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\views\\home\\imoveis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\views\\home\\imoveis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\models\\cadastrousuariorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\models\\cadastrousuariorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\services\\recoverycodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\services\\recoverycodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\services\\passwordhasherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\services\\passwordhasherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\models\\redefinirsenhacomcodigorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\models\\redefinirsenhacomcodigorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\models\\imagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\models\\imagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\models\\cadastroimovelrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\models\\cadastroimovelrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|c:\\users\\pedrovisk\\desktop\\things\\projeto\\imobiliariaviviane\\imobiliariaviviane\\imobiliariaviviane\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83959FE8-D3C8-C0BE-351B-FFE40902B94B}|ImobiliariaViviane\\ImobiliariaViviane.csproj|solutionrelative:imobiliariaviviane\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +83,183 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CadastroImoveis.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\CadastroImoveis.cshtml",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Views\\Home\\CadastroImoveis.cshtml",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\CadastroImoveis.cshtml",
+              "RelativeToolTip": "ImobiliariaViviane\\Views\\Home\\CadastroImoveis.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T01:36:35.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AlterarImoveis.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\AlterarImoveis.cshtml",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Views\\Home\\AlterarImoveis.cshtml",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\AlterarImoveis.cshtml",
+              "RelativeToolTip": "ImobiliariaViviane\\Views\\Home\\AlterarImoveis.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T01:36:35.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Imoveis.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\Imoveis.cshtml",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Views\\Home\\Imoveis.cshtml",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\Imoveis.cshtml",
+              "RelativeToolTip": "ImobiliariaViviane\\Views\\Home\\Imoveis.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T01:36:34.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ImobiliariaViviane\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T01:36:34.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "ImobiliariaViviane\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T01:36:33.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RecoveryCodeService.cs",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Services\\RecoveryCodeService.cs",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Services\\RecoveryCodeService.cs",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Services\\RecoveryCodeService.cs",
+              "RelativeToolTip": "ImobiliariaViviane\\Services\\RecoveryCodeService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:26.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PasswordHasherService.cs",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Services\\PasswordHasherService.cs",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Services\\PasswordHasherService.cs",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Services\\PasswordHasherService.cs",
+              "RelativeToolTip": "ImobiliariaViviane\\Services\\PasswordHasherService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:26.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JwtTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Services\\JwtTokenService.cs",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Services\\JwtTokenService.cs",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Services\\JwtTokenService.cs",
+              "RelativeToolTip": "ImobiliariaViviane\\Services\\JwtTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:25.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RedefinirSenhaComCodigoRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Models\\RedefinirSenhaComCodigoRequest.cs",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Models\\RedefinirSenhaComCodigoRequest.cs",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Models\\RedefinirSenhaComCodigoRequest.cs",
+              "RelativeToolTip": "ImobiliariaViviane\\Models\\RedefinirSenhaComCodigoRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:23.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Imagem.cs",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Models\\Imagem.cs",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Models\\Imagem.cs",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Models\\Imagem.cs",
+              "RelativeToolTip": "ImobiliariaViviane\\Models\\Imagem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:23.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CadastroUsuarioRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Models\\CadastroUsuarioRequest.cs",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Models\\CadastroUsuarioRequest.cs",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Models\\CadastroUsuarioRequest.cs",
+              "RelativeToolTip": "ImobiliariaViviane\\Models\\CadastroUsuarioRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:22.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\Login.cshtml",
               "RelativeDocumentMoniker": "ImobiliariaViviane\\Views\\Home\\Login.cshtml",
               "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Views\\Home\\Login.cshtml",
               "RelativeToolTip": "ImobiliariaViviane\\Views\\Home\\Login.cshtml",
-              "ViewState": "AgIAABEAAAAAAAAAAAAYwEQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAN4AAAAAAAAAAAAAAEQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-04-05T16:31:31.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CadastroImovelRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Models\\CadastroImovelRequest.cs",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Models\\CadastroImovelRequest.cs",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Models\\CadastroImovelRequest.cs",
+              "RelativeToolTip": "ImobiliariaViviane\\Models\\CadastroImovelRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:22.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ImobiliariaViviane\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Pedrovisk\\Desktop\\things\\PROJETO\\ImobiliariaViviane\\ImobiliariaViviane\\ImobiliariaViviane\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ImobiliariaViviane\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:18.553Z",
               "EditorCaption": ""
             }
           ]
