@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Imobiliária Mathers";
+}
+
+@section Styles {
+    <link href="~/css/global.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/index.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<main>
+    <partial name="_Header" />
+
+    <div id="banner" v-cloak>
+        <img src="~/assets/mao.jpg" alt="Banner Imobiliária" class="img-fluid" />
+
+        <div class="overlay-content">
+            <div class="search-form-container" id="index-app">
+                <h1 class="form-title">O seu imóvel dos sonhos está a <br /> apenas alguns cliques de você!</h1>
+
+                <form class="search-form" @@submit.prevent="buscarImoveis">
+                    <div class="form-group">
+                        <i class="bi bi-house-door"></i>
+                        <div class="form-input-wrapper">
+                            <label>Tipo</label>
+                            <select id="input-tipo" v-model="filtros.tipo">
+                                <option value="">Selecionar Tipo</option>
+                                <option value="casa">Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="bi bi-car-front"></i>
+                        <div class="form-input-wrapper">
+                            <label>Garagem</label>
+                            <select id="input-garagem" v-model="filtros.garagem">
+                                <option value="">Selecionar Garagem</option>
+                                <option value="true">Com Garagem</option>
+                                <option value="false">Sem Garagem</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="bi bi-door-closed"></i>
+                        <div class="form-input-wrapper">
+                            <label>Dormitórios</label>
+                            <select id="input-dormitorios" v-model="filtros.dormitorios">
+                                <option value="">Selecionar Dormitórios</option>
+                                <option value="1">1 dormitório</option>
+                                <option value="2">2 dormitórios</option>
+                                <option value="3">3 dormitórios</option>
+                                <option value="4">4 dormitórios</option>
+                                <option value="5">5 ou mais dormitórios</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="bi bi-rulers"></i>
+                        <div class="form-input-wrapper">
+                            <label>Espaço</label>
+                            <select id="input-espaco" v-model="filtros.espaco">
+                                <option value="">Selecionar Espaço</option>
+                                <option value="0-50">0 - 50 m²</option>
+                                <option value="51-100">51 - 100 m²</option>
+                                <option value="101-150">101 - 150 m²</option>
+                                <option value="150+">Mais de 150 m²</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-buscar">Buscar imóveis</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    <script>
+        const indexApp = Vue.createApp({
+            delimiters: ['[[', ']]'],
+            data() {
+                return {
+                    filtros: {
+                        tipo: '',
+                        garagem: '',
+                        dormitorios: '',
+                        espaco: ''
+                    }
+                };
+            },
+            methods: {
+                buscarImoveis() {
+                    const params = new URLSearchParams();
+
+                    if (this.filtros.tipo) params.append('tipo', this.filtros.tipo);
+                    if (this.filtros.garagem) params.append('garagem', this.filtros.garagem);
+                    if (this.filtros.dormitorios) params.append('dormitorios', this.filtros.dormitorios);
+                    if (this.filtros.espaco) params.append('espaco', this.filtros.espaco);
+
+                    window.location.href = `/Home/Imoveis?${params.toString()}`;
+                }
+            }
+        });
+
+        indexApp.mount('#index-app');
+    </script>
+}

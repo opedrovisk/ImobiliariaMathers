@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-3 px-md-4 px-lg-5">
+    <div class="container-fluid justify-content-between align-items-center">
+        <div class="nav-links d-flex gap-3">
+            @if (User.IsInRole("ADMINISTRATOR"))
+            {
+                <a asp-controller="Home" asp-action="CadastroImoveis" class="nav-link">Cadastrar imóveis</a>
+                <a asp-controller="Home" asp-action="AlterarImoveis" class="nav-link">Alterar imóveis</a>
+            }
+        </div>
+
+        <a class="navbar-brand mx-auto" asp-controller="Home" asp-action="Index">
+            <img src="~/assets/Logo.png" alt="Imobiliária Mathers" class="logo-img" />
+        </a>
+
+        <div class="d-flex align-items-center gap-2" id="auth-actions">
+            @if (User.Identity?.IsAuthenticated != true)
+            {
+                <a asp-controller="Home" asp-action="Login" class="btn btn-outline-light btn-sm">
+                    Acesso privado
+                </a>
+            }
+
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <button id="logout-btn" type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                        data-bs-target="#logoutConfirmModal">
+                    Sair
+                </button>
+            }
+        </div>
+    </div>
+</nav>
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <div class="modal fade" id="logoutConfirmModal" tabindex="-1" aria-labelledby="logoutConfirmModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutConfirmModalLabel">Confirmar saída</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente sair da sua conta agora?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <form asp-controller="Home" asp-action="Logout" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger">Sair</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

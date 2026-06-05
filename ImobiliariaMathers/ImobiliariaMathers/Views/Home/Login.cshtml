@@ -1,0 +1,229 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        .toast-container-custom {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toast-custom {
+            width: fit-content;
+            min-width: unset;
+            max-width: min(92vw, 360px);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.92rem;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .toast-custom.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast-custom.success {
+            background: #198754;
+        }
+
+        .toast-custom.error {
+            background: #dc3545;
+        }
+
+        .password-input-wrapper {
+            position: relative;
+        }
+        
+        .password-input-wrapper input {
+            padding-right: 2.8rem;
+        }
+        
+        .password-visibility-btn {
+            position: absolute;
+            top: 50%;
+            right: 0.55rem;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            color: #58738e;
+            padding: 0.2rem;
+            line-height: 1;
+            cursor: pointer;
+            width: 1.8rem;
+            height: 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .password-visibility-btn:hover {
+            color: #1b4f80;
+        }
+
+        .password-visibility-btn i {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .password-visibility-btn.animating i {
+            transform: scale(0.78);
+            opacity: 0.55;
+        }
+    </style>
+}
+
+<main class="login-page">
+    <section class="login-showcase" aria-hidden="true">
+        <div class="showcase-badge">
+            <img src="~/assets/Logo.png" alt="Logo Imobiliária Mathers" class="showcase-logo" />
+        </div>
+        <h1>Seu próximo imóvel começa aqui</h1>
+        <p>Entre para acessar imóveis de alta qualidade.</p>
+        <img src="~/assets/loginpic.svg" alt="Ilustração de login" class="showcase-image" />
+    </section>
+
+    <section class="login-panel">
+        <form class="login-form" id="login-access" asp-controller="Home" asp-action="Index">
+            <div class="login-form-header">
+                <p class="eyebrow">Bem-vindo de volta</p>
+                <h2>Entrar</h2>
+                <p class="subtitle">Use seu e-mail e senha para continuar.</p>
+            </div>
+
+            <div class="login-input-group">
+                <div class="login-input-box">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required />
+                </div>
+
+                <div class="login-input-box">
+                    <label for="password">Senha</label>
+                    <div class="password-input-wrapper">
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required />
+                        <button type="button" class="password-visibility-btn" data-target="password"
+                                aria-label="Mostrar senha" title="Mostrar senha">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-row">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember" />
+                    Lembrar de mim
+                </label>
+            </div>
+
+            <button class="login-submit" type="submit">Entrar na plataforma</button>
+        </form>
+    </section>
+</main>
+
+<form id="csrf-form" method="post" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
+<div id="toast-container" class="toast-container-custom" aria-live="polite" aria-atomic="true"></div>
+
+@section Scripts {
+    <script>
+        const toastContainer = document.getElementById('toast-container');
+        const loginForm = document.getElementById('login-access');
+        const csrfToken = document.querySelector('#csrf-form input[name="__RequestVerificationToken"]')?.value || '';
+
+        function showToast(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `toast-custom ${type}`;
+            toast.textContent = message;
+
+            toastContainer.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.add('show');
+            });
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 250);
+            }, 2600);
+        }
+        
+        function initializePasswordToggles() {
+            const toggleButtons = document.querySelectorAll('.password-visibility-btn');
+        
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const input = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+        
+                    if (!input || !icon) {
+                        return;
+                    }
+        
+                    const isPassword = input.type === 'password';
+                    this.classList.add('animating');
+
+                    input.type = isPassword ? 'text' : 'password';
+                    icon.className = isPassword ? 'fa-solid fa-eye' : 'fa-regular fa-eye';
+                    this.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+                    this.setAttribute('title', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+
+                    setTimeout(() => {
+                        this.classList.remove('animating');
+                    }, 180);
+                });
+            });
+        }
+        
+        initializePasswordToggles();
+
+        loginForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const payload = {
+                email: document.getElementById('email').value,
+                senha: document.getElementById('password').value,
+                rememberMe: document.querySelector('input[name="remember"]').checked
+            };
+
+            try {
+                const response = await fetch('/Home/ValidarLogin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.mensagem || 'Não foi possível entrar.');
+                }
+
+                showToast(data.mensagem || 'Login realizado com sucesso.', 'success');
+                setTimeout(() => {
+                    window.location.href = '/Home/Index';
+                }, 700);
+            } catch (error) {
+                showToast(error.message || 'Erro ao validar login.', 'error');
+            }
+        });
+    </script>
+}
