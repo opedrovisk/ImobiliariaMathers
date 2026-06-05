@@ -187,22 +187,6 @@ Crie o arquivo `appsettings.Local.json` na raiz do projeto baseando-se no exempl
 dotnet ef database update
 ```
 
----
-
-## Executando o Projeto
-
-```bash
-# HTTP (porta 5120)
-dotnet run --launch-profile http
-
-# HTTPS (porta 7045)
-dotnet run --launch-profile https
-```
-
-A aplicação estará disponível em `http://localhost:5120` ou `https://localhost:7045`.
-
----
-
 ## Endpoints da API
 
 Todos os endpoints retornam JSON. O token JWT é transportado via cookie HttpOnly `auth_token`.
