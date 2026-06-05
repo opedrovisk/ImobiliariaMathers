@@ -15,7 +15,6 @@ Aplicação web desenvolvida em **ASP.NET Core MVC (.NET 10)** para gerenciament
 - [Serviços](#serviços)
 - [Funcionalidades](#funcionalidades)
 - [Configuração](#configuração)
-- [Executando o Projeto](#executando-o-projeto)
 - [Endpoints da API](#endpoints-da-api)
 - [Segurança](#segurança)
 
