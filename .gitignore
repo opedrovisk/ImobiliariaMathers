@@ -5,4 +5,4 @@ node_modules
 **/obj/
 
 # Local sensitive overrides (do not commit)
-ImobiliariaViviane/ImobiliariaViviane/appsettings.Local.json
+ImobiliariaMathers/ImobiliariaMathers/appsettings.Development.json
